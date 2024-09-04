@@ -327,7 +327,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                     } else {
                       continue;
                     }
-                    if (ii?.title === "Latest weibo") {
+                    if (ii?.title === "最新微博") {
                       ii.title = "Latest";
                     }
                   }
