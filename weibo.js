@@ -995,9 +995,9 @@ if (url.includes("/interface/sdk/sdkad.php")) {
               continue;
             }
             // 未关注博主
-            if (item?.data?.user?.following === false) {
-              continue;
-            }
+           // if (item?.data?.user?.following === false) {
+            //  continue;
+           // }
             // 关闭关注推荐
             if (item?.data?.user?.unfollowing_recom_switch === 1) {
               item.data.user.unfollowing_recom_switch = 0;
