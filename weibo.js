@@ -321,14 +321,14 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                 if (i?.pageDatas?.length > 0) {
                   let newII = [];
                   for (let ii of i.pageDatas) {
-                    if (["最新微博", "特别关注", "好友圈", "视频"]?.includes(ii?.title)) {
+                    if (["最新微博", "Latest weibo"]?.includes(ii?.title)) {
                       // 白名单列表
                       newII.push(ii);
                     } else {
                       continue;
                     }
                     if (ii?.title === "最新微博") {
-                      ii.title = "微博";
+                      ii.title = "Latest";
                     }
                   }
                   i.pageDatas = newII;
@@ -529,7 +529,7 @@ if (url.includes("/interface/sdk/sdkad.php")) {
                 i.itemId === "100505_-_draft" // 草稿箱
               // i.itemId === "100505_-_pay" || // 我的钱包
               // i.itemId === "100505_-_ordercenter" || // 我的订单
-              // i.itemId === "100505_-_productcenter" || // 创作中心
+                i.itemId === "100505_-_productcenter" || // 创作中心
               // i.itemId === "100505_-_promote" || // 广告中心
             );
           }
@@ -992,10 +992,6 @@ if (url.includes("/interface/sdk/sdkad.php")) {
             }
             // 美妆精选季
             if (item?.data?.title?.text?.includes("精选")) {
-              continue;
-            }
-            // 未关注博主
-            if (item?.data?.user?.following === false) {
               continue;
             }
             // 关闭关注推荐
